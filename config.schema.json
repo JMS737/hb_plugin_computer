@@ -1,15 +1,19 @@
 {
-  "pluginAlias": "ExampleHomebridgePlugin",
-  "pluginType": "platform",
+  "pluginAlias": "Computer-LAN",
+  "pluginType": "accessory",
   "singular": true,
   "schema": {
     "type": "object",
     "properties": {
-      "name": {
-        "title": "Name",
+      "ethernetAddress": {
+        "title": "Computer Name / IP Address",
         "type": "string",
-        "required": true,
-        "default": "Example Dynamic Platform"
+        "required": true
+      },
+      "macAddress": {
+        "title": "MAC Address",
+        "type": "string",
+        "requried": true
       }
     }
   }
