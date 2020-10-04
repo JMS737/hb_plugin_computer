@@ -39,12 +39,8 @@ let hap: HAP;
 /*
  * Initializer function called when the plugin is loaded.
  */
-export = (api: API) => {
-  hap = api.hap;
-  api.registerAccessory('ComputerLanSwitch', ComputerLanSwitch);
-};
 
-class ComputerLanSwitch implements AccessoryPlugin {
+export class ComputerLanSwitch implements AccessoryPlugin {
 
   private readonly log: Logging;
   private readonly name: string;
@@ -57,8 +53,8 @@ class ComputerLanSwitch implements AccessoryPlugin {
     this.log = log;
     this.name = config.name;
 
-    log.info('Address: ' + config.ethernetAddress);
-    log.info('MAC Address: ' + config.macAddress);
+    log.info('Address: ' + config['ethernetAddress']);
+    log.info('MAC Address: ' + config['macAddress']);
 
     this.switchService = new hap.Service.Switch(this.name);
     this.switchService.getCharacteristic(hap.Characteristic.On)
