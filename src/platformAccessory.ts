@@ -44,6 +44,7 @@ export class ComputerLanSwitch implements AccessoryPlugin {
 
   private readonly log: Logging;
   private readonly name: string;
+  private readonly api: API;
   private switchOn = false;
 
   private readonly switchService: Service;
@@ -52,6 +53,7 @@ export class ComputerLanSwitch implements AccessoryPlugin {
   constructor(log: Logging, config: AccessoryConfig, api: API) {
     this.log = log;
     this.name = config.name;
+    this.api = api;
 
     log.info('Address: ' + config['ethernetAddress']);
     log.info('MAC Address: ' + config['macAddress']);

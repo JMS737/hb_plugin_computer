@@ -6,6 +6,6 @@ import {ComputerLanSwitch} from './platformAccessory';
 /**
  * This method registers the platform with Homebridge
  */
-export = (api: API) => {
+module.exports = (api: API) => {
   api.registerAccessory(PLUGIN_NAME, ComputerLanSwitch);
 };

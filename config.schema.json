@@ -5,6 +5,12 @@
   "schema": {
     "type": "object",
     "properties": {
+      "name": {
+        "title": "Name",
+        "type": "string",
+        "required": true,
+        "default": "Desktop"
+      },
       "ethernetAddress": {
         "title": "Computer Name / IP Address",
         "type": "string",
